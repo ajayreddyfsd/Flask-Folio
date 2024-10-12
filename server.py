@@ -10,16 +10,16 @@ def home():
 def desired_page(page_name):
     return render_template(page_name)
 
+def writeData(data):
+    with open(r'FlaskFolio\database.txt', mode='a') as f:
+      print(str(data))
+      f.write(str(data) + '\n')
 
 @app.route('/submit_form', methods=['POST', 'GET'])
 def submit_form():
     if request.method == 'POST':
         data = request.form.to_dict()
-        
-        with open('database.txt', mode='a') as f:
-            emailId, emailSubject, emailBody = data
-            f.write(f'{emailId},{emailSubject},{emailBody}')
-
+        writeData(data)
         return redirect('thankyou.html')
     else:
         return 'something wrong!'
