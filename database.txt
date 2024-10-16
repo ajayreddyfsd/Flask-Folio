@@ -1,2 +1,0 @@
-{'emailId': 'a@a.com', 'emailSubject': 'kmklm', 'emailBody': 'm,kl'}
-{'emailId': 'a@a.com', 'emailSubject': 'hello', 'emailBody': 'hello'}
