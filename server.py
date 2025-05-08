@@ -6,7 +6,8 @@ app = Flask(__name__)
 def home():
     return render_template('index.html')
 
-
+# instead of writing all the routes one by one
+# just extract the url slug and display that specific page accordingly
 @app.route('/<string:page_name>')
 def desired_page(page_name):
     return render_template(page_name)
